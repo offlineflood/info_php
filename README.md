@@ -1,3 +1,37 @@
+Bu SQL kodu bir məhsul (product) kateqoriyası yaratmaq və bu kateqoriyada müxtəlif məhsullar haqqında məlumatları saxlamaq üçün istifadə olunur. Gəlin, bu kodu addım-addım izah edək:
+
+### 1. `create database categorys;`
+Bu sətir, `categorys` adında yeni bir verilənlər bazası yaradır. Verilənlər bazası məhsul kateqoriyalarını və bu kateqoriyalara aid olan məhsulları saxlamaq üçün istifadə ediləcək.
+
+- **Niyə bu addım var?** Verilənlər bazası yaratmaq, məlumatların saxlanacağı yeri müəyyən etmək üçündür. Bu olmadan verilənlər bazasında cədvəllər və məlumatlar saxlamaq mümkün olmaz.
+
+### 2. `use categorys;`
+Bu sətir, əvvəl yaradılmış `categorys` verilənlər bazasını aktivləşdirir, yəni bu verilənlər bazası ilə işləmək üçün seçilir.
+
+- **Niyə bu addım var?** Aktiv verilənlər bazasını seçmək, hansı verilənlər bazası ilə işləyəcəyinizi müəyyən etmək üçündür. Bu addım olmadan, SQL sorğularınızın hansı verilənlər bazasında işləyəcəyini bilməzsiniz.
+
+### 3. `create table product( id int AUTO_INCREMENT PRIMARY KEY, description varchar(255), image varchar(255), price double );`
+Bu sətir, `product` adlı bir cədvəl yaradır. Cədvəldə aşağıdakı sütunlar var:
+
+- **`id int AUTO_INCREMENT PRIMARY KEY`:** Bu sütun məhsulun unikal identifikatorudur. `int` tipi ilə tanımlanıb və `AUTO_INCREMENT` xüsusiyyəti vasitəsilə hər yeni məhsul əlavə ediləndə avtomatik olaraq artırılır. `PRIMARY KEY` isə bu sütunun cədvəldə unikal olduğunu göstərir.
+  
+- **`description varchar(255)`:** Bu sütun məhsulun təsvirini saxlayır və maksimum 255 simvoldan ibarət ola bilər.
+
+- **`image varchar(255)`:** Bu sütun məhsulun şəklinin fayl adını saxlayır və maksimum 255 simvoldan ibarət ola bilər.
+
+- **`price double`:** Bu sütun məhsulun qiymətini saxlayır. `double` tipi onluq rəqəmlər üçün istifadə olunur.
+
+- **Niyə bu addım var?** Cədvəl yaratmaq, məhsul məlumatlarını strukturlaşdırılmış şəkildə saxlamaq üçün vacibdir. Hər bir sütun fərqli məlumat tipləri üçün ayrılmışdır.
+
+### 4. `insert into product(description,image,price)values ('Smartfon Samsung Galaxy S24 Ultra','1.png',2234), ('Smartfon Samsung Galaxy S24 Ultra','2.png',2234), ('Smartfon Samsung Galaxy S24 Ultra','3.png',2234), ('Smartfon Samsung Galaxy S24 Ultra','4.png',2234);`
+Bu sətirlər, `product` cədvəlinə dörd yeni məhsul əlavə edir. Hər bir məhsul üçün təsvir, şəkil və qiymət verilir.
+
+- **Niyə bu addım var?** Bu addım məhsul məlumatlarını cədvələ əlavə etmək üçün istifadə olunur. Hər bir `insert` əmri yeni bir məhsulun məlumatlarını cədvələ daxil edir.
+
+### Nəticə:
+Bu kod, əvvəlcə `categorys` adlı verilənlər bazası və `product` adlı cədvəl yaradır. Daha sonra bu cədvələ dörd məhsul haqqında məlumat əlavə edir. Bu məlumatlar, məhsulun təsviri, şəkli və qiymətindən ibarətdir. Verilənlər bazasında strukturlaşdırılmış məlumatları saxlamaq və onlarla işləmək üçün bu addımlar vacibdir.
+
+<hr size="18"/>
 Bu PHP kodu sadə bir alış-veriş səbəti funksionallığını təmin edir. Gəlin, kodun hər hissəsini ətraflı izah edək.
 
 ### PHP Hissəsi
