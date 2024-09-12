@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Oyunu Ayarları</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f9; /* Səhifənin arxa plan rəngi */
+            display: flex; /* Flexbox istifadə olunur */
+            justify-content: center; /* Mərkəzləşdirmə */
+            align-items: center; /* Mərkəzləşdirmə */
+            height: 100vh; /* Tam ekran hündürlüyü */
+            margin: 0; /* Səhifə kənar boşluğunu sıfırlamaq */
+        }
+
+        .container {
+            background-color: #fff; /* Konteynerin arxa plan rəngi */
+            border-radius: 8px; /* Künc radiusu */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Kölgə */
+            padding: 20px; /* İç boşluq */
+            max-width: 600px; /* Maksimum genişlik */
+            width: 100%; /* Tam genişlik */
+        }
+
+        .form-control, .custom-select, .form-control-color {
+            border-radius: 4px; /* Daxili künc radiusu */
+        }
+
+        .btn-primary {
+            background-color: #28a745; /* Düymənin arxa plan rəngi */
+            border: none; /* Sərhəd yoxdur */
+        }
+
+        .btn-primary:hover {
+            background-color: #218838; /* Hover effekti */
+        }
+
+        .form-group {
+            margin-bottom: 15px; /* Aşağı boşluq */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Snake Oyunu Ayarları</h1>
+        <form action="start_game.php" method="post">
+            <!-- Ekran Ölçüləri -->
+            <div class="form-group">
+                <label for="width">Ekranın Enini seçin:</label>
+                <select id="width" name="width" class="custom-select">
+                    <option value="800">800px</option>
+                    <option value="1024">1024px</option>
+                    <option value="1280">1280px</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="height">Ekranın Hündürlüyünü seçin:</label>
+                <select id="height" name="height" class="custom-select">
+                    <option value="600">600px</option>
+                    <option value="768">768px</option>
+                    <option value="900">900px</option>
+                </select>
+            </div>
+
+            <!-- İlanın Yüsəri -->
+            <div class="form-group">
+                <label for="snakeAppearance">İlanın yüsəri:</label>
+                <select id="snakeAppearance" name="snakeAppearance" class="custom-select">
+                    <option value="strong">Güclü</option>
+                    <option value="medium">Orta</option>
+                    <option value="weak">Zəif</option>
+                </select>
+            </div>
+
+            <!-- Divarların Olub-Olmaması -->
+            <div class="form-group">
+                <label for="walls">Divarların olması:</label>
+                <select id="walls" name="walls" class="custom-select">
+                    <option value="yes">Bəli</option>
+                    <option value="no">Xeyr</option>
+                </select>
+            </div>
+
+            <!-- İlanın Son Rəngi -->
+            <div class="form-group">
+                <label for="snakeColor">İlanın son rəngini seçin:</label>
+                <input type="color" id="snakeColor" name="snakeColor" class="form-control form-control-color" value="#00FF00">
+            </div>
+
+            <!-- İlanın Hərəkət Rəngi -->
+            <div class="form-group">
+                <label for="backgroundColor">İlanın hərəkət etdiyi fon rəngini seçin:</label>
+                <input type="color" id="backgroundColor" name="backgroundColor" class="form-control form-control-color" value="#000000">
+            </div>
+
+            <!-- Göndərmə düyməsi -->
+            <button type="submit" class="btn btn-primary btn-block">Başlat</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS və asılılıqlar -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
